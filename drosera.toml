@@ -3,7 +3,7 @@ drosera_rpc = "https://relay.hoodi.drosera.io"
 eth_chain_id = 560048
 
 [traps.rugwatch]
-path = "out/RugwatchTrap.sol/RugwatchTrap.json"  # update if different
+path = "out/RugwatchTrap.sol/RugwatchTrap.json"
 response_contract = "0x9DF5D55bdC8e19780d01c3857E31c17Bd7970C3a"
 response_function = "handleRug(address,uint256,uint256,uint256)"
 cooldown_period_blocks = 50
