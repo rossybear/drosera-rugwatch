@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
-import {ITrap} from "drosera-contracts/interfaces/ITrap.sol";
+import {ITrap} from "./interfaces/ITrap.sol";
 
 interface ILPToken {
     function totalSupply() external view returns (uint256);
@@ -40,8 +40,10 @@ contract RugwatchTrap is ITrap {
         if (data.length < 2) return (false, "");
 
         // decode last two samples
-        (address poolPrev, uint256 prevSupply, uint256 thresholdPrev) = abi.decode(data[data.length - 2], (address, uint256, uint256));
-        (address poolRecent, uint256 recentSupply, uint256 thresholdRecent) = abi.decode(data[data.length - 1], (address, uint256, uint256));
+        (address poolPrev, uint256 prevSupply, uint256 thresholdPrev) =
+            abi.decode(data[data.length - 2], (address, uint256, uint256));
+        (address poolRecent, uint256 recentSupply, uint256 thresholdRecent) =
+            abi.decode(data[data.length - 1], (address, uint256, uint256));
 
         // basic sanity: pools must match and threshold must match; otherwise do not fire
         if (poolPrev == address(0) || poolRecent == address(0)) return (false, "");
@@ -62,3 +64,4 @@ contract RugwatchTrap is ITrap {
         return (false, "");
     }
 }
+

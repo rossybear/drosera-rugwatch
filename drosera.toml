@@ -1,0 +1,17 @@
+ethereum_rpc = "https://ethereum-hoodi-rpc.publicnode.com"
+drosera_rpc = "https://relay.hoodi.drosera.io"
+eth_chain_id = 560048
+
+[traps.rugwatch]
+path = "out/RugwatchTrap.sol/RugwatchTrap.json"  # update if different
+response_contract = "0x9DF5D55bdC8e19780d01c3857E31c17Bd7970C3a"
+response_function = "handleRug(address,uint256,uint256,uint256)"
+cooldown_period_blocks = 50
+min_number_of_operators = 1
+max_number_of_operators = 5
+block_sample_size = 2
+private_trap = false
+whitelist = ["0x7b95fF29A648f69e45695A2b77F2cb29adAEc5c5"]
+address = "0xe31d83Ea0F0033777A585bF44197eeF111247765"
+
+config_data = "0x0000000000000000000000007fAA9C7f98C4B9e3FE5F43B5F71c2440f917718300000000000000000000000000000000000000000000000000000000000003e8"
