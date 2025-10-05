@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  drosera-operator:
+    image: drosera/operator:latest
+    container_name: drosera_operator
+    environment:
+      - DROSERA_PRIVATE_KEY=${DROSERA_PRIVATE_KEY}
+      - ETH_RPC_URL=${ETH_RPC_URL}
+    volumes:
+      - ./drosera.toml:/app/drosera.toml
+    restart: unless-stopped
+
+
+
+
